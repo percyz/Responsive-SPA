@@ -1,0 +1,38 @@
+.Footer {
+  display: flex;
+  background-color: #333;
+  flex-wrap: wrap; 
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.Footer-Nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 120px;
+  width: 150px;
+  padding: 50px;
+}
+
+.Footer-Menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+}
+
+.Footer-title {
+  font-size: 2ex;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+
+.Footer-intro {
+  font-size: large;
+}
+
