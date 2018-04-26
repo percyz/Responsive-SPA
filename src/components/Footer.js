@@ -28,7 +28,7 @@ export default class Footer extends Component {
                 </Link>
                 {items.content.map( (item, key) => {
                   return (
-                    <Link id={key} to="/">
+                    <Link key={key} to="/">
                     {item}
                     </Link>
                   )
@@ -39,7 +39,7 @@ export default class Footer extends Component {
 
     const navsMobile = this.getNav().map( (items, key) => {
       return (
-        <div className="Footer-Menu" id={key}>
+        <div className="Footer-Menu" key={key}>
           <SplitButton
             //bsStyle={}
             title={items.title}
@@ -48,7 +48,7 @@ export default class Footer extends Component {
           >
             {items.content.map( (item, key) => {
               return (
-                <MenuItem eventKey={key} to="/">
+                <MenuItem key={key} eventKey={key} to="/">
                 {item}
                 </MenuItem>
               )

@@ -9,6 +9,22 @@
   color: white;
 }
 
+.Header-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #333;
+  padding: 20px;
+  color: white;
+}
+
+.Header-mobile-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .Header-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;

@@ -38,7 +38,7 @@ export default class Home extends Component {
 
     const languageMobile = this.getLanguage().map( (item, key) => {
       return (
-          <Carousel.Item id={key}>
+          <Carousel.Item key={key}>
             <Panel className="Panel">
               <Panel.Heading>{item.title}</Panel.Heading>
               <Panel.Body className="Panel-body" >
