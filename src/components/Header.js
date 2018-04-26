@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Nav, NavItem, ButtonToolbar, Dropdown, Glyphicon, MenuItem } from 'react-bootstrap';
+import { Nav, NavItem, ButtonToolbar, Dropdown, MenuItem } from 'react-bootstrap';
 
 import logo from '../logo.svg';
 import './Header.css';
@@ -25,7 +25,7 @@ export default class Header extends Component {
   renderMobile() {
       return (
             <ButtonToolbar>
-                <Dropdown noCaret>
+                <Dropdown>
                     <Dropdown.Toggle>
                         Menu
                     </Dropdown.Toggle>

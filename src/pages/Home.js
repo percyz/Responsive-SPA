@@ -5,9 +5,6 @@ import './Home.css';
 
 export default class Home extends Component {
 
-
-
-
   getLanguage(){
     return [
       {title: 'React', photo:'../images/defaultPhoto.jpg', content: 'The incredibly popular industry titan that continues to grow in popularity year over year, built and maintained by Facebook.'},
@@ -19,22 +16,17 @@ export default class Home extends Component {
     ]
   }
 
-  renderMobile() {
-  }
-
   render() {
 
     const { width } = this.props;
     const isMobile = width <= 500;
-    const imgWidthe = isMobile? "360" : "500";
-    const imgHight = isMobile? "150" : "250";
 
-    const languages = this.getLanguage().map( item => {
+    const languages = this.getLanguage().map( (item, key) => {
       return (
-          <Panel className="Panel">
+          <Panel className="Panel" id={key}>
             <Panel.Heading>{item.title}</Panel.Heading>
             <Panel.Body className="Panel-body" >
-              <img src={require('../images/defaultPhoto.png')} width="260" height="150" />
+              <img alt="true" src={require('../images/defaultPhoto.png')} width="260" height="150" />
               <div className="Panel-body-content" >
                  <p>{item.content}</p>
                  <Button bsStyle="primary">View More</Button>
@@ -44,13 +36,13 @@ export default class Home extends Component {
       )
     })
 
-    const languageMobile = this.getLanguage().map( item => {
+    const languageMobile = this.getLanguage().map( (item, key) => {
       return (
-          <Carousel.Item>
+          <Carousel.Item id={key}>
             <Panel className="Panel">
               <Panel.Heading>{item.title}</Panel.Heading>
               <Panel.Body className="Panel-body" >
-                <img src={require('../images/defaultPhoto.png')} width="260" height="150" />
+                <img alt="true" src={require('../images/defaultPhoto.png')} width="260" height="150" />
                 <div className="Panel-body-content" >
                   <p>{item.content}</p>
                   <Button bsStyle="primary">View More</Button>
@@ -86,9 +78,9 @@ export default class Home extends Component {
           {isMobile? <Carousel className="Carousel" >{languageMobile}</Carousel> : languages}
         </div>
 
-        <div className={isMobile? "Home-banner-mobile" : "Home-banner"}>
-          <img src={require('../images/banner.png')} width={imgWidthe} height={imgHight} />
-          <img src={require('../images/banner.png')} width={imgWidthe} height={imgHight} />
+        <div className="Home-banner">
+          <img alt="true" src={require('../images/banner.png')} className={isMobile? "Home-banner-item-mobile" : "Home-banner-item"} />
+          <img alt="true" src={require('../images/banner.png')} className={isMobile? "Home-banner-item-mobile" : "Home-banner-item"} />
         </div>
       </div>
     );

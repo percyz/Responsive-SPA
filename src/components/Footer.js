@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Nav, NavItem, SplitButton, MenuItem } from 'react-bootstrap';
+import { SplitButton, MenuItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-import logo from '../logo.svg';
 import './Footer.css';
 
 export default class Footer extends Component {
@@ -16,24 +15,20 @@ export default class Footer extends Component {
     ]
   }
 
-  renderMobile() {
-
-  }
-
   render() {
 
     const { width } = this.props;
     const isMobile = width <= 500;
 
-    const navs = this.getNav().map( items => {
+    const navs = this.getNav().map( (items, key) => {
       return (
-            <div className="Footer-Nav">
+            <div className="Footer-Nav" id={key}>
                 <Link className="Footer-title" to="/">
                 {items.title}
                 </Link>
-                {items.content.map( item => {
+                {items.content.map( (item, key) => {
                   return (
-                    <Link to="/">
+                    <Link id={key} to="/">
                     {item}
                     </Link>
                   )
@@ -44,7 +39,7 @@ export default class Footer extends Component {
 
     const navsMobile = this.getNav().map( (items, key) => {
       return (
-        <div className="Footer-Menu">
+        <div className="Footer-Menu" id={key}>
           <SplitButton
             //bsStyle={}
             title={items.title}

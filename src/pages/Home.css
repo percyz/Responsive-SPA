@@ -71,15 +71,16 @@
 
 .Home-banner {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center; 
 }
 
-.Home-banner-mobile {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; 
+.Home-banner-item {
+  max-width: 500px;
+}
+
+.Home-banner-item-mobile {
+  max-width: 350px;
 }
 
